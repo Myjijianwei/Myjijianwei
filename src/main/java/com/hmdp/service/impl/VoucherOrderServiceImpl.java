@@ -40,7 +40,7 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
     public Result seckillVoucher1(Long voucherId) {
         //查询优惠劵
         SeckillVoucher voucher = seckillVoucherService.getById(voucherId);
-        System.out.println(voucher.getBeginTime()+" "+voucher.getEndTime()+" "+LocalDateTime.now());
+        //System.out.println(voucher.getBeginTime()+" "+voucher.getEndTime()+" "+LocalDateTime.now());
         //判断秒杀是否开始
         if(voucher.getBeginTime().isAfter(LocalDateTime.now())){
             return Result.fail("秒杀尚未开始");
